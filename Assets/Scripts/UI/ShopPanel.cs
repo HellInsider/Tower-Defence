@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class ShopPanel : MonoBehaviour
 {
-    [SerializeField]
-    public GameLogicManager LogicManager;
-    [SerializeField]
-    public BuildingsView Builder;
-    [SerializeField]
-    private Transform _buttonParent;
+    [SerializeField] public GameLogicManager LogicManager;
+    [SerializeField] public BuildingsView Builder;
+    [SerializeField] private Transform _buttonParent;
+    [SerializeField] private GameObject _tooltip;
     public GameObject ButtonTemplate;
 
 
@@ -24,6 +22,7 @@ public class ShopPanel : MonoBehaviour
             button.GetComponent<ButtonHandler>().Present(profile);
             button.GetComponent<ButtonHandler>().SetBuilder(Builder);
             button.GetComponent<ButtonHandler>().SetGameLogicManager(LogicManager);
+            button.GetComponent<ButtonHandler>().SetTooltip(_tooltip);
         }
     }
 

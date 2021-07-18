@@ -33,7 +33,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeOnAttack: 0.07
   attackDistance: 19.92
-  damage: 1.93
+  damage: 10
   currentTarget: {fileID: 0}
   Head: {fileID: 1329976228762081540}
   rotationPoint: {fileID: 7861468291711163343}
