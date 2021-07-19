@@ -1,17 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class BattleManager : MonoBehaviour
 {
     public Transform spawnPoint;
     public GameObject _creepExample;
-    public Transform creepTarget;
+    public GameObject creepTarget;
     public float delay;
     private List<BaseCreep> _creeps = new List<BaseCreep>();
+    private List<BaseTower> _towers = new List<BaseTower>();
     private short _creepsNum = 6;
-    [SerializeField]
-    GameLogicManager _logicManager;
+    [SerializeField] private GameLogicManager _logicManager;
 
     public void StartWave()
     {
@@ -23,12 +24,12 @@ public class BattleManager : MonoBehaviour
     {
         for (int i = 0; i < _creepsNum; i++)
         {
-            Create();
+            CreateCreep();
             yield return new WaitForSeconds(delay);
         }
     }
 
-    private void Create()
+    private void CreateCreep()
     {
         GameObject newCreep =  Instantiate(_creepExample, spawnPoint.position, spawnPoint.rotation);
         _creeps.Add(newCreep.GetComponent<BaseCreep>());
@@ -36,12 +37,35 @@ public class BattleManager : MonoBehaviour
         newCreep.GetComponent<BaseCreep>().SetManager(this.GetComponent<BattleManager>());
     }
 
+    public void CreateTower(GameObject newTower)
+    {
+        _towers.Add(newTower.GetComponent<BaseTower>());
+    }
+
     public void DeleteUnit(GameObject unit)
     {
         _logicManager.AddMoney(unit.GetComponent<BaseCreep>().GetMoney());
         _creeps.Remove(unit.GetComponent<BaseCreep>());
-        Destroy(unit);
+        Destroy(unit);  
         
+        if(_creeps.Count == 0)
+        {
+            _logicManager.WaveEnded();
+        }
     }
 
+    public void GameOver()
+    {
+        foreach(var creep in _creeps)
+        {
+            creep.PlayWinAnimation();
+            creep.GetComponent<NavMeshAgent>().isStopped = true;
+        }
+
+        foreach(var tower in _towers)
+        {
+            tower.GameOver = true;
+            tower.GetComponent<Animator>().SetBool("Loss", true);
+        }
+    }
 }

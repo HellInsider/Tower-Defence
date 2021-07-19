@@ -37,5 +37,10 @@ public class ScenesController : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(temp);
     }
 
+    public void ExitApplication()
+    {
+        Application.Quit();
+    }
+
 
 }

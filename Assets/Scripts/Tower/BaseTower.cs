@@ -9,13 +9,11 @@ public class BaseTower : MonoBehaviour
     public float attackDistance;
     public float damage;
     public GameObject currentTarget = null;
+    public bool GameOver = false;
 
-    [SerializeField]
-    private GameObject Head;
-    [SerializeField]
-    private Transform rotationPoint;
-    [SerializeField]
-    protected Transform _attackPoint;
+    [SerializeField] private GameObject Head;
+    [SerializeField] private Transform rotationPoint;
+    [SerializeField] protected Transform _attackPoint;
     private Animator _animator;
     private float attackCooldown;
 
@@ -32,6 +30,11 @@ public class BaseTower : MonoBehaviour
 
     protected virtual void Update()
     {
+        if(GameOver)
+        {
+            return;
+        }
+
         attackCooldown -= Time.deltaTime;
 
         if (currentTarget == null)

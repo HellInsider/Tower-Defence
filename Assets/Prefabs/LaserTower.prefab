@@ -33,8 +33,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeOnAttack: 0.07
   attackDistance: 19.92
-  damage: 10
+  damage: 62.6
   currentTarget: {fileID: 0}
+  GameOver: 0
   Head: {fileID: 1329976228762081540}
   rotationPoint: {fileID: 7861468291711163343}
   _attackPoint: {fileID: 3789037898469796245}
@@ -147,17 +148,17 @@ PrefabInstance:
     - target: {fileID: 2681200935561883499, guid: efd70ed43baafe24eb4bba62d59159e9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.59
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2681200935561883499, guid: efd70ed43baafe24eb4bba62d59159e9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.88
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2681200935561883499, guid: efd70ed43baafe24eb4bba62d59159e9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.27
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2681200935561883499, guid: efd70ed43baafe24eb4bba62d59159e9,
         type: 3}

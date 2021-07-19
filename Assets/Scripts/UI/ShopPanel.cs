@@ -26,9 +26,4 @@ public class ShopPanel : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
