@@ -7,11 +7,15 @@ public class BuildingsView : MonoBehaviour
 {
     private RaycastHit Hit;
     public GameObject Building;
-    [SerializeField]
-    private GameObject BuildingBlueprint;
+    [SerializeField] private GameObject BuildingBlueprint;
+    private GameObject _battleManager;
     private GameObject buildingViewer;
     private bool _buildingMode = false;
 
+    private void Start()
+    {
+        _battleManager = GameObject.Find("BattleManager");
+    }
 
     public void StartBuildingMode(GameObject buildingTemplate)
     {
@@ -45,12 +49,12 @@ public class BuildingsView : MonoBehaviour
                 Vector3 temp = Hit.point;
                 
                 buildingViewer.transform.position = temp;
-                //Debug.Log(buildingViewer.GetComponent<MeshCollider>().bounds.size.y);
             }
 
             if (Input.GetMouseButtonDown(0))
             {
-                Instantiate(Building, buildingViewer.transform.position, buildingViewer.transform.rotation);
+                GameObject newTower = Instantiate(Building, buildingViewer.transform.position, buildingViewer.transform.rotation);
+                _battleManager.GetComponent<BattleManager>().CreateTower(newTower);
                 Destroy(buildingViewer);
                 EndBuildingMode();
             }

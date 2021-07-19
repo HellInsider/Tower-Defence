@@ -7,7 +7,7 @@ public class ButtonHandler : MonoBehaviour, IPointerEnterHandler
     private string Name;
     [SerializeField] private Image Icon;
     private string Price;
-    private GameObject Building;
+    private GameObject Building = null;
     private BuildingsView _builder;
     private GameLogicManager _logicManager;
     private short _price;
@@ -50,8 +50,6 @@ public class ButtonHandler : MonoBehaviour, IPointerEnterHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log(Tooltip);
-        Debug.Log(Tooltip.GetComponent<Tooltip>().Price.text);
         Tooltip.GetComponent<Tooltip>().Price.text = Price;
         Tooltip.GetComponent<Tooltip>().Name.text = Name;
         TooltipSetRightPosition();
@@ -61,7 +59,6 @@ public class ButtonHandler : MonoBehaviour, IPointerEnterHandler
     public void OnPointerExit(PointerEventData eventData)
     {
         Tooltip.SetActive(false);
-
     }
 
     private void TooltipSetRightPosition()

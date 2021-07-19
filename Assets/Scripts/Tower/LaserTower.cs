@@ -38,8 +38,7 @@ public class LaserTower : BaseTower
         laser.localScale = _laserScale;
         laser.position = _attackPoint.position + 0.5f * d * laser.forward;
 
-        currentTarget.GetComponent<BaseCreep>().GetHit(damage * Time.deltaTime);
-        
+        currentTarget.GetComponent<BaseCreep>().GetHit(damage * Time.deltaTime);        
     }
 
     protected override void DeactivateTower()
