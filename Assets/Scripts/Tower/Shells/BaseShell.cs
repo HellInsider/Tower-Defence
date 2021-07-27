@@ -26,7 +26,7 @@ public class BaseShell : MonoBehaviour
             return;
         }
 
-        if(Vector3.Distance(transform.position, _target.transform.position) <= 1)
+        if(Vector3.Distance(transform.position, _target.transform.position) <= 1.5f)
         {
             _target.GetComponent<BaseCreep>().GetHit(_damage);
             Destroy(gameObject);
@@ -34,7 +34,7 @@ public class BaseShell : MonoBehaviour
         else
         {
            Vector3 t = _target.transform.position;
-           //t.z -= 1.5f;
+           t.y += 1f;
            transform.position = Vector3.MoveTowards(transform.position, t, Speed * Time.deltaTime);
            transform.LookAt(_target.transform.position);
         }

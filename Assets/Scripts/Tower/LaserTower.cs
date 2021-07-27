@@ -32,8 +32,9 @@ public class LaserTower : BaseTower
     protected override void Attack()
     {
         base.Attack();
-
-        float d = Vector3.Distance(_attackPoint.position, currentTarget.transform.position);
+        Vector3 t = currentTarget.transform.position;
+        t.y += 1;
+        float d = Vector3.Distance(_attackPoint.position, t);
         _laserScale.z = d / 2;
         laser.localScale = _laserScale;
         laser.position = _attackPoint.position + 0.5f * d * laser.forward;

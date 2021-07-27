@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: c3389bcf7a98d9344aaf18f1628b486d,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -514,12 +515,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 5
-    m_Right: 5
-    m_Top: 5
-    m_Bottom: 5
+    m_Left: 10
+    m_Right: 10
+    m_Top: 10
+    m_Bottom: 10
   m_ChildAlignment: 3
-  m_Spacing: 5
+  m_Spacing: 20
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
@@ -2378,13 +2379,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 969683114}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 0.392}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3333,7 +3334,7 @@ PrefabInstance:
     - target: {fileID: 8314477122874477788, guid: d06c2d15681e02840b7f03dc4bc4c6f9,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 58.166435
+      value: 48.166435
       objectReference: {fileID: 0}
     - target: {fileID: 8314477122874477788, guid: d06c2d15681e02840b7f03dc4bc4c6f9,
         type: 3}
@@ -3373,7 +3374,7 @@ PrefabInstance:
     - target: {fileID: 8314477122874477788, guid: d06c2d15681e02840b7f03dc4bc4c6f9,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 35
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8314477122874477788, guid: d06c2d15681e02840b7f03dc4bc4c6f9,
         type: 3}
