@@ -20,28 +20,23 @@ public class BaseShell : MonoBehaviour
 
     private void Update()
     {
-        if (_target == null)
+        if (_target == null || Vector3.Distance(transform.position, _target.transform.position) > 1000)
         {
-            if(transform.position.y > 0)
-            {
-                transform.position += Vector3.forward * Time.deltaTime * Speed;                
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
-
+            Destroy(gameObject);
             return;
         }
 
-        if(Vector3.Distance(transform.position, _target.transform.position) <= 0.1f)
+        if(Vector3.Distance(transform.position, _target.transform.position) <= 1)
         {
             _target.GetComponent<BaseCreep>().GetHit(_damage);
             Destroy(gameObject);
         }
         else
         {
-           transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, Speed * Time.deltaTime);
+           Vector3 t = _target.transform.position;
+           //t.z -= 1.5f;
+           transform.position = Vector3.MoveTowards(transform.position, t, Speed * Time.deltaTime);
+           transform.LookAt(_target.transform.position);
         }
     }
 }

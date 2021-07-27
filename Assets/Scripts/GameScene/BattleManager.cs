@@ -11,7 +11,7 @@ public class BattleManager : MonoBehaviour
     public float delay;
     private List<BaseCreep> _creeps = new List<BaseCreep>();
     private List<BaseTower> _towers = new List<BaseTower>();
-    private short _creepsNum = 6;
+    private short _creepsNum = 7;
     [SerializeField] private GameLogicManager _logicManager;
 
     public void StartWave()
@@ -42,7 +42,7 @@ public class BattleManager : MonoBehaviour
         _towers.Add(newTower.GetComponent<BaseTower>());
     }
 
-    public void DeleteUnit(GameObject unit)
+    public void UnitKilled(GameObject unit)
     {
         _logicManager.AddMoney(unit.GetComponent<BaseCreep>().GetMoney());
         _creeps.Remove(unit.GetComponent<BaseCreep>());
@@ -54,11 +54,17 @@ public class BattleManager : MonoBehaviour
         }
     }
 
+    public void DeleteUinit(GameObject unit)
+    {
+        _creeps.Remove(unit.GetComponent<BaseCreep>());
+        Destroy(unit);
+    }
+
     public void GameOver()
     {
         foreach(var creep in _creeps)
         {
-            creep.PlayWinAnimation();
+            //creep.PlayWinAnimation();
             creep.GetComponent<NavMeshAgent>().isStopped = true;
         }
 

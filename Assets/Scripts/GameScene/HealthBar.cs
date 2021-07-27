@@ -5,14 +5,14 @@ public class HealthBar : MonoBehaviour
 {
     [SerializeField] private Image healthBar;
     private Transform cam;
-    private void Awake()
+    private void Start()
     {
         cam = GameObject.Find("Main Camera").GetComponent<Transform>();
     }
 
     private void LateUpdate()
     {
-        if (Time.frameCount % 10 == 0)
+        if (Time.frameCount % 3 == 0)
         {
             transform.LookAt(transform.position + cam.forward);
         }
