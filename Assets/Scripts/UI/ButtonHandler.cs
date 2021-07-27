@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtonHandler : MonoBehaviour, IPointerEnterHandler
+public class ButtonHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     private string Name;
     [SerializeField] private Image Icon;
@@ -58,6 +58,7 @@ public class ButtonHandler : MonoBehaviour, IPointerEnterHandler
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        Debug.Log("OnPTRExit");
         Tooltip.SetActive(false);
     }
 

@@ -94,7 +94,9 @@ public class BaseTower : MonoBehaviour
 
     protected virtual void FaceTarget()
     {
-        Head.GetComponent<Transform>().LookAt(currentTarget.transform.position);
+        Vector3 t = currentTarget.transform.position;
+        t.y += 1;
+        Head.GetComponent<Transform>().LookAt(t);
     }
 
     protected virtual void Attack()

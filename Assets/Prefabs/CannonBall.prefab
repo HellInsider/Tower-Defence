@@ -3763,7 +3763,7 @@ ParticleSystem:
       emitProbability: 1
   LightsModule:
     enabled: 1
-    ratio: 0.51
+    ratio: 0.85
     light: {fileID: 5994109193148247317, guid: 608274c57102457459567558df018d1c, type: 3}
     randomDistribution: 1
     color: 0
@@ -3772,7 +3772,7 @@ ParticleSystem:
     rangeCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 2.69
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3825,7 +3825,7 @@ ParticleSystem:
     intensityCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 4.09
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4860,4 +4860,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fc5dde4c20d63a46add9601161d4d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 12.22
+  Speed: 17.22
